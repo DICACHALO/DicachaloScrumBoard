@@ -23,7 +23,7 @@ return res.status(200).send({role});
 
 // En el req llega una api pero sin ningún JSON porque no se necesita
 const listRole = async (req, res) => {
-    const role = await Role.find()
+    let role = await Role.find()
     if(!role || role.length === 0 ) return res.status(401).send("No role");
     return res.status(200).send({role});
 };
